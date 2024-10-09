@@ -18,9 +18,28 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public IActionResult SearchCustomers(String name)
+        public IActionResult Tomteverkstad(IFormCollection form)
         {
-            ViewBag.Name = name;
+            string formID = form["formID"];
+            if (formID == "login") {
+                @ViewBag.print = "login";
+            }
+            else if (formID == "search") {
+                @ViewBag.print = "search";
+                @ViewBag.name = form["Name"];
+            }
+            else if(formID == "create") {
+                @ViewBag.print = "create";
+                @ViewBag.name = form["Name"];
+            }
+            else if (formID == "update") {
+                @ViewBag.print = "update";
+                @ViewBag.name = form["Name"];
+            }
+            else {
+                @ViewBag.print = "none";
+            }
+
             return View();
         }
 

@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Tomteverkstad";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @ViewBag.print
+</div>
+
+<form action="Inlogg.php" method="POST">
+    <input type="submit" name="submit" value="Login">
+</form>
+
+<br />
+<br />
+
+<form method="post" action="@Url.Action("Tomteverkstad", "Home")">
+    <p> Search for Tomtenissar </p>
+    <input type="hidden" name="formID" value="search">
+    <input type="text" name="Name" value= @ViewBag.name>
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+<br />
+<br />
+
+<form method="post" action="@Url.Action("Tomteverkstad", "Home")">
+    <p> Create tomtenisse </p>
+    Name of tomtenisse
+    <input type="text" name="Name" value=""> <br>
+    ID of tomtenisse
+    <input type="text" name="CId" value=""> <br>
+    Amount of nuts earned
+    <input type="number" name="Nuts" value=""> <br>
+    Amount of raisin earned
+    <input type="number" name="Raisin" value=""> <br>
+    <input type="hidden" name="formID" value="create">
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+<br />
+<br />
+
+<form method="post" action="@Url.Action("Tomteverkstad", "Home")">
+    <p> Make chefnisse </p>
+    Name of tomtenisse
+    <input type="text" name="Name" value=""> <br>
+    ID of tomtenisse
+    <input type="text" name="ChefId" value=""> <br>
+    Shoe size <br>
+    <input type="radio" id="none" name="Shoesize" value="none">
+    <label for="none">None</label> <br>
+    <input type="radio" id="mini" name="Shoesize" value="mini">
+    <label for="mini">Mini</label> <br>
+    <input type="radio" id="medium" name="Shoesize" value="medium">
+    <label for="medium">Medium</label> <br>
+    <input type="radio" id="maxi" name="Shoesize" value="maxi">
+    <label for="maxi">Maxi</label> <br>
+    <input type="radio" id="ultra" name="Shoesize" value="ultra">
+    <label for="ultra">Ultra</label> <br>
+    <input type="radio" id="mega" name="Shoesize" value="mega">
+    <label for="mega">Mega</label> <br>
+    <input type="hidden" name="formID" value="update">
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+<br />
+<br />
+
+<form method="post" action="@Url.Action("Tomteverkstad", "Home")">
+    <p> Get toys by prise </p>
+    Price of toy
+    <input type="number" name="Prise" value=""> <br>
+    <input type="hidden" name="formID" value="">
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+ 
