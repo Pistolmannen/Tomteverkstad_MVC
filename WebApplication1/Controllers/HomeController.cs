@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Diagnostics;
 using WebApplication1.Models;
 
@@ -7,10 +8,12 @@ namespace WebApplication1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IConfiguration _configuration;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
@@ -20,6 +23,7 @@ namespace WebApplication1.Controllers
 
         public IActionResult Tomteverkstad(IFormCollection form)
         {
+            TomtenisseModel tm = new TomtenisseModel(_configuration);
             string formID = form["formID"];
             if (formID == "login") {
                 @ViewBag.print = "login";
@@ -27,6 +31,8 @@ namespace WebApplication1.Controllers
             else if (formID == "search") {
                 @ViewBag.print = "search";
                 @ViewBag.name = form["Name"];
+                DataTable TomtenissarData = tm.GetTomtenissar();
+                ViewBag.Tomtenissar = TomtenissarData;
             }
             else if(formID == "create") {
                 @ViewBag.print = "create";
