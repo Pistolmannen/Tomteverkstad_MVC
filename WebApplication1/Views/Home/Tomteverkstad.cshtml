@@ -9,9 +9,19 @@
     @ViewBag.print
 </div>
 
-<form action="Inlogg.php" method="POST">
+<form method="post" action="@Url.Action("Index", "Home")">
     <input type="submit" name="submit" value="Login">
 </form>
+
+<br />
+<p> Name of all tomtenissar </p>
+
+<select name="dropdown">
+    @foreach (var Tomtenisse in ViewBag.AllTomtenissar.Rows)
+    {   
+        <option>@Tomtenisse[0]</option>
+    }
+</select>
 
 <br />
 <br />
@@ -24,6 +34,26 @@
 </form>
 
 <br />
+
+
+@if(ViewBag.Tomtenissar != null){
+
+    @foreach (var Tomtenisse in ViewBag.Tomtenissar.Rows)
+    {   
+        <pre>
+            @for (var i = 0; i < ViewBag.Tomtenissar.Columns.Count; i++)
+            {
+                <div>@ViewBag.Tomtenissar.Columns[i] : @Tomtenisse[i]</div>
+            }
+        </pre>
+       
+    }
+}
+else{
+    <p>no data found</p>
+}
+
+
 <br />
 
 <form method="post" action="@Url.Action("Tomteverkstad", "Home")">

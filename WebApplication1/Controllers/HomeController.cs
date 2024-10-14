@@ -24,6 +24,9 @@ namespace WebApplication1.Controllers
         public IActionResult Tomteverkstad(IFormCollection form)
         {
             TomtenisseModel tm = new TomtenisseModel(_configuration);
+            DataTable AllTomtenissarData = tm.GetTomtenissar();
+            ViewBag.AllTomtenissar = AllTomtenissarData;
+
             string formID = form["formID"];
             if (formID == "login") {
                 @ViewBag.print = "login";
@@ -31,8 +34,9 @@ namespace WebApplication1.Controllers
             else if (formID == "search") {
                 @ViewBag.print = "search";
                 @ViewBag.name = form["Name"];
-                DataTable TomtenissarData = tm.GetTomtenissar();
+                DataTable TomtenissarData = tm.GetTomtenissarByName(@ViewBag.name);
                 ViewBag.Tomtenissar = TomtenissarData;
+
             }
             else if(formID == "create") {
                 @ViewBag.print = "create";
@@ -41,6 +45,13 @@ namespace WebApplication1.Controllers
             else if (formID == "update") {
                 @ViewBag.print = "update";
                 @ViewBag.name = form["Name"];
+                if (form["Shoesize"] == "none") {
+                    tm.MakeShoeSizeNull(form["Name"], form["ChefID"]);
+                }
+                else {
+                    tm.UpdateShoeSize(form["Shoesize"], form["Name"], form["ChefID"]);
+                }
+
             }
             else {
                 @ViewBag.print = "none";
