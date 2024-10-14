@@ -34,7 +34,7 @@ namespace WebApplication1.Models
         public DataTable GetTomtenissar() {
             MySqlConnection dbcon = new MySqlConnection(connectionString);
             dbcon.Open();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("select * from Tomtenisse", dbcon);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("CALL getNissar", dbcon);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "result");
             DataTable tomtenisseTable = ds.Tables["result"];

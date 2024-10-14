@@ -97,6 +97,12 @@ else{
 </form>
 
 <br />
+
+@if (ViewBag.updateStatus != null)
+{
+    <p>@ViewBag.updateStatus</p>
+}
+
 <br />
 
 <form method="post" action="@Url.Action("Tomteverkstad", "Home")">

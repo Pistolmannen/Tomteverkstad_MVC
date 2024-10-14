@@ -45,12 +45,22 @@ namespace WebApplication1.Controllers
             else if (formID == "update") {
                 @ViewBag.print = "update";
                 @ViewBag.name = form["Name"];
-                if (form["Shoesize"] == "none") {
-                    tm.MakeShoeSizeNull(form["Name"], form["ChefID"]);
+                @ViewBag.ID = form["ChefID"];
+                @ViewBag.ShoeSize = form["ShoeSize"];
+                if (@ViewBag.name.Count == 0 || @ViewBag.ID.Count == 0 || @ViewBag.ShoeSize.Count == 0) {
+                    ViewBag.updateStatus = "update needs all values";
                 }
                 else {
-                    tm.UpdateShoeSize(form["Shoesize"], form["Name"], form["ChefID"]);
-                }
+                    if (form["Shoesize"] == "none")
+                    {
+                        tm.MakeShoeSizeNull(form["Name"], form["ChefID"]);
+                    }
+                    else
+                    {
+                        tm.UpdateShoeSize(form["Shoesize"], form["Name"], form["ChefID"]);
+                    }
+                    ViewBag.updateStatus = "update successful";
+                }  
 
             }
             else {
