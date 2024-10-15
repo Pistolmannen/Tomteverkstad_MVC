@@ -45,6 +45,7 @@
             {
                 <div>@ViewBag.Tomtenissar.Columns[i] : @Tomtenisse[i]</div>
             }
+            @Html.ActionLink("Delete", "DeleteTomtenisse", "Home", new{Name = @Tomtenisse[0], PNR = @Tomtenisse[1]}, null)
         </pre>
        
     }
