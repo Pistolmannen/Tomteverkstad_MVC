@@ -36,7 +36,7 @@
 <br />
 
 
-@if(ViewBag.Tomtenissar != null){
+@if(ViewBag.Tomtenissar != null && ((System.Data.DataTable)ViewBag.Tomtenissar).Rows.Count > 0){
 
     @foreach (var Tomtenisse in ViewBag.Tomtenissar.Rows)
     {   
@@ -71,6 +71,12 @@ else{
 </form>
 
 <br />
+
+@if (ViewBag.createStatus != null)
+{
+    <p>@ViewBag.createStatus</p>
+}
+
 <br />
 
 <form method="post" action="@Url.Action("Tomteverkstad", "Home")">

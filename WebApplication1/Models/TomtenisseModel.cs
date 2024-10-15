@@ -43,8 +43,24 @@ namespace WebApplication1.Models
 
             return tomtenisseTable;
         }
-        public DataTable UpdateShoeSize(String ShoeSize, String Name, String ID)
-        {
+
+        public DataTable CreateTomtenisse(String Name, String ID, int Nuts, int Raisin) {
+            MySqlConnection dbcon = new MySqlConnection(connectionString);
+            dbcon.Open();
+            MySqlDataAdapter adapter = new MySqlDataAdapter("insert into Tomtenisse(Namn, IdNr, Nötter, Russin) values(@inputName , @inputID , @inputNuts , @inputRaisin)", dbcon);
+            adapter.SelectCommand.Parameters.AddWithValue("@inputName", Name);
+            adapter.SelectCommand.Parameters.AddWithValue("@inputID", ID);
+            adapter.SelectCommand.Parameters.AddWithValue("@inputNuts", Nuts);
+            adapter.SelectCommand.Parameters.AddWithValue("@inputRaisin", Raisin);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "result");
+            DataTable createTable = ds.Tables["result"];
+            dbcon.Close();
+
+
+            return createTable;
+        }
+        public DataTable UpdateShoeSize(String ShoeSize, String Name, String ID) {
             MySqlConnection dbcon = new MySqlConnection(connectionString);
             dbcon.Open();
             MySqlDataAdapter adapter = new MySqlDataAdapter("update Tomtenisse set Skostorlek = @inputShoeSize where Namn = @inputName and IdNr = @inputID", dbcon);
@@ -53,14 +69,13 @@ namespace WebApplication1.Models
             adapter.SelectCommand.Parameters.AddWithValue("@inputID", ID);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "result");
-            DataTable tomtenisseTable = ds.Tables["result"];
+            DataTable updateTable = ds.Tables["result"];
             dbcon.Close();
 
 
-            return tomtenisseTable;
+            return updateTable;
         }
-        public DataTable MakeShoeSizeNull(String Name, String ID)
-        {
+        public DataTable MakeShoeSizeNull(String Name, String ID) {
             MySqlConnection dbcon = new MySqlConnection(connectionString);
             dbcon.Open();
             MySqlDataAdapter adapter = new MySqlDataAdapter("update Tomtenisse set Skostorlek = NULL where Namn = @inputName and IdNr = @inputID", dbcon);
@@ -68,11 +83,11 @@ namespace WebApplication1.Models
             adapter.SelectCommand.Parameters.AddWithValue("@inputID", ID);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "result");
-            DataTable tomtenisseTable = ds.Tables["result"];
+            DataTable updateTable = ds.Tables["result"];
             dbcon.Close();
 
 
-            return tomtenisseTable;
+            return updateTable;
         }
     }
 }

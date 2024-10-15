@@ -41,6 +41,22 @@ namespace WebApplication1.Controllers
             else if(formID == "create") {
                 @ViewBag.print = "create";
                 @ViewBag.name = form["Name"];
+                @ViewBag.ID = form["CID"];
+                @ViewBag.nuts = form["Nuts"];
+                @ViewBag.raisin = form["Raisin"];
+                if (@ViewBag.name.Count == 0 || @ViewBag.ID.Count == 0 || @ViewBag.nuts.Count == 0 || @ViewBag.raisin.Count == 0)
+                {
+                    ViewBag.updateStatus = "create needs all values";
+                }
+                else
+                {
+                    int nuts;
+                    int raisin;
+                    int.TryParse(@ViewBag.nuts, out nuts);
+                    int.TryParse(@ViewBag.raisin, out raisin);
+                    tm.CreateTomtenisse(@ViewBag.name, @ViewBag.ID, nuts, raisin);
+                    ViewBag.createStatus = "create might be successful";
+                }
             }
             else if (formID == "update") {
                 @ViewBag.print = "update";
@@ -59,7 +75,7 @@ namespace WebApplication1.Controllers
                     {
                         tm.UpdateShoeSize(form["Shoesize"], form["Name"], form["ChefID"]);
                     }
-                    ViewBag.updateStatus = "update successful";
+                    ViewBag.updateStatus = "update might be successful";
                 }  
 
             }
