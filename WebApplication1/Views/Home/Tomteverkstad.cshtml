@@ -28,7 +28,7 @@
 
 <form method="post" action="@Url.Action("Tomteverkstad", "Home")">
     <p> Search for Tomtenissar </p>
-    <input type="hidden" name="formID" value="search">
+    <input type="hidden" name="formID" value="searchTomtenissar">
     <input type="text" name="Name" value= @ViewBag.name>
     <input type="submit" name="submit" value="Submit">
 </form>
@@ -115,8 +115,27 @@ else{
     <p> Get toys by prise </p>
     Price of toy
     <input type="number" name="Prise" value=""> <br>
-    <input type="hidden" name="formID" value="">
+    <input type="hidden" name="formID" value="searchLeksaker">
     <input type="submit" name="submit" value="Submit">
 </form>
+
+<br />
+
+@if (ViewBag.leksaker != null && ((System.Data.DataTable)ViewBag.leksaker).Rows.Count > 0) {
+
+    @foreach (var Leksak in ViewBag.leksaker.Rows)
+    {
+        <pre>
+            @for (var i = 0; i < ViewBag.leksaker.Columns.Count; i++)
+            {
+                <div>@ViewBag.leksaker.Columns[i] : @Leksak[i]</div>
+            }
+        </pre>
+
+    }
+}
+else {
+    <p>no data found</p>
+}
 
  

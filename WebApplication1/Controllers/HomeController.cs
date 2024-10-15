@@ -31,12 +31,11 @@ namespace WebApplication1.Controllers
             if (formID == "login") {
                 @ViewBag.print = "login";
             }
-            else if (formID == "search") {
-                @ViewBag.print = "search";
+            else if (formID == "searchTomtenissar") {
+                @ViewBag.print = "searchTomtenissar";
                 @ViewBag.name = form["Name"];
                 DataTable TomtenissarData = tm.GetTomtenissarByName(@ViewBag.name);
                 ViewBag.Tomtenissar = TomtenissarData;
-
             }
             else if(formID == "create") {
                 @ViewBag.print = "create";
@@ -50,10 +49,8 @@ namespace WebApplication1.Controllers
                 }
                 else
                 {
-                    int nuts;
-                    int raisin;
-                    int.TryParse(@ViewBag.nuts, out nuts);
-                    int.TryParse(@ViewBag.raisin, out raisin);
+                    int.TryParse(@ViewBag.nuts, out int nuts);
+                    int.TryParse(@ViewBag.raisin, out int raisin);
                     tm.CreateTomtenisse(@ViewBag.name, @ViewBag.ID, nuts, raisin);
                     ViewBag.createStatus = "create might be successful";
                 }
@@ -79,8 +76,13 @@ namespace WebApplication1.Controllers
                 }  
 
             }
-            else {
-                @ViewBag.print = "none";
+            else if (formID == "searchLeksaker") {
+                @ViewBag.print = "searchLeksaker";
+                @ViewBag.Prise = form["Prise"];
+                int.TryParse(@ViewBag.Prise, out int prise);
+                LeksakModel Lm = new LeksakModel(_configuration);
+                DataTable LeksakData = Lm.GetleksakByPrise(prise);
+                @ViewBag.leksaker = LeksakData; 
             }
 
             return View();
