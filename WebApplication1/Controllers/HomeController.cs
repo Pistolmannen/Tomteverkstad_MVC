@@ -32,13 +32,11 @@ namespace WebApplication1.Controllers
                 @ViewBag.print = "login";
             }
             else if (formID == "searchTomtenissar") {
-                @ViewBag.print = "searchTomtenissar";
                 @ViewBag.name = form["Name"];
                 DataTable TomtenissarData = tm.GetTomtenissarByName(@ViewBag.name);
                 ViewBag.Tomtenissar = TomtenissarData;
             }
             else if(formID == "create") {
-                @ViewBag.print = "create";
                 @ViewBag.name = form["Name"];
                 @ViewBag.ID = form["CID"];
                 @ViewBag.nuts = form["Nuts"];
@@ -56,7 +54,6 @@ namespace WebApplication1.Controllers
                 }
             }
             else if (formID == "update") {
-                @ViewBag.print = "update";
                 @ViewBag.name = form["Name"];
                 @ViewBag.ID = form["ChefID"];
                 @ViewBag.ShoeSize = form["ShoeSize"];
@@ -77,7 +74,6 @@ namespace WebApplication1.Controllers
 
             }
             else if (formID == "searchLeksaker") {
-                @ViewBag.print = "searchLeksaker";
                 @ViewBag.Prise = form["Prise"];
                 int.TryParse(@ViewBag.Prise, out int prise);
                 LeksakModel Lm = new LeksakModel(_configuration);
@@ -86,6 +82,15 @@ namespace WebApplication1.Controllers
             }
 
             return View();
+        }
+
+        public IActionResult DeleteTomtenisse(String Name, String PNR) 
+        { 
+            TomtenisseModel tm = new TomtenisseModel(_configuration);   // test
+            tm.DeleteTomtenisse(Name, PNR);                             // 000000-0000-1-000000000
+
+
+            return RedirectToAction("Tomteverkstad", "Home"); 
         }
 
         public IActionResult Privacy()

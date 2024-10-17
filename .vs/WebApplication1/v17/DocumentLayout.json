@@ -3,15 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\ErikGustafsson\\source\\repos\\Tomteverkstad_MVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ErikGustafsson\\AppData\\Roaming\\Microsoft\\UserSecrets\\3776a9bf-5921-4d2f-af4c-1d98a30cbd15\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{FF37C000-7779-4878-9829-CE351E6B4391}|WebApplication1\\WebApplication1.csproj|c:\\users\\erikgustafsson\\source\\repos\\tomteverkstad_mvc\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF37C000-7779-4878-9829-CE351E6B4391}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FF37C000-7779-4878-9829-CE351E6B4391}|WebApplication1\\WebApplication1.csproj|c:\\users\\erikgustafsson\\source\\repos\\tomteverkstad_mvc\\webapplication1\\models\\tomtenissemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FF37C000-7779-4878-9829-CE351E6B4391}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\tomtenissemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF37C000-7779-4878-9829-CE351E6B4391}|WebApplication1\\WebApplication1.csproj|c:\\users\\erikgustafsson\\source\\repos\\tomteverkstad_mvc\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF37C000-7779-4878-9829-CE351E6B4391}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FF37C000-7779-4878-9829-CE351E6B4391}|WebApplication1\\WebApplication1.csproj|c:\\users\\erikgustafsson\\source\\repos\\tomteverkstad_mvc\\webapplication1\\views\\home\\tomteverkstad.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FF37C000-7779-4878-9829-CE351E6B4391}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\tomteverkstad.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF37C000-7779-4878-9829-CE351E6B4391}|WebApplication1\\WebApplication1.csproj|c:\\users\\erikgustafsson\\source\\repos\\tomteverkstad_mvc\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FF37C000-7779-4878-9829-CE351E6B4391}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ErikGustafsson\\AppData\\Roaming\\Microsoft\\UserSecrets\\3776a9bf-5921-4d2f-af4c-1d98a30cbd15\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,19 +29,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\ErikGustafsson\\AppData\\Roaming\\Microsoft\\UserSecrets\\3776a9bf-5921-4d2f-af4c-1d98a30cbd15\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\3776a9bf-5921-4d2f-af4c-1d98a30cbd15\\secrets.json",
               "ToolTip": "C:\\Users\\ErikGustafsson\\AppData\\Roaming\\Microsoft\\UserSecrets\\3776a9bf-5921-4d2f-af4c-1d98a30cbd15\\secrets.json",
               "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\3776a9bf-5921-4d2f-af4c-1d98a30cbd15\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-10-10T10:06:40.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ErikGustafsson\\source\\repos\\Tomteverkstad_MVC\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ErikGustafsson\\source\\repos\\Tomteverkstad_MVC\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-17T08:35:14.111Z",
               "EditorCaption": ""
             },
             {
@@ -44,7 +65,7 @@
               "RelativeDocumentMoniker": "WebApplication1\\Models\\TomtenisseModel.cs",
               "ToolTip": "C:\\Users\\ErikGustafsson\\source\\repos\\Tomteverkstad_MVC\\WebApplication1\\Models\\TomtenisseModel.cs",
               "RelativeToolTip": "WebApplication1\\Models\\TomtenisseModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAqwEwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T10:01:59.733Z",
               "EditorCaption": ""
@@ -52,12 +73,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Tomteverkstad.cshtml",
+              "DocumentMoniker": "C:\\Users\\ErikGustafsson\\source\\repos\\Tomteverkstad_MVC\\WebApplication1\\Views\\Home\\Tomteverkstad.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Tomteverkstad.cshtml",
+              "ToolTip": "C:\\Users\\ErikGustafsson\\source\\repos\\Tomteverkstad_MVC\\WebApplication1\\Views\\Home\\Tomteverkstad.cshtml*",
+              "RelativeToolTip": "WebApplication1\\Views\\Home\\Tomteverkstad.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-17T08:35:11.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\ErikGustafsson\\source\\repos\\Tomteverkstad_MVC\\WebApplication1\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\ErikGustafsson\\source\\repos\\Tomteverkstad_MVC\\WebApplication1\\Controllers\\HomeController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAwwF0AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T09:59:43.444Z",
               "EditorCaption": ""

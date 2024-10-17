@@ -60,6 +60,23 @@ namespace WebApplication1.Models
 
             return createTable;
         }
+
+        public DataTable DeleteTomtenisse(String Name, String ID)
+        {
+            MySqlConnection dbcon = new MySqlConnection(connectionString);
+            dbcon.Open();
+            MySqlDataAdapter adapter = new MySqlDataAdapter("delete from Tomtenisse where namn = @inputName and IdNr = @inputID", dbcon);
+            adapter.SelectCommand.Parameters.AddWithValue("@inputName", Name);
+            adapter.SelectCommand.Parameters.AddWithValue("@inputID", ID);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "result");
+            DataTable deleteTable = ds.Tables["result"];
+            dbcon.Close();
+
+
+            return deleteTable;
+        }
+
         public DataTable UpdateShoeSize(String ShoeSize, String Name, String ID) {
             MySqlConnection dbcon = new MySqlConnection(connectionString);
             dbcon.Open();
@@ -75,6 +92,7 @@ namespace WebApplication1.Models
 
             return updateTable;
         }
+
         public DataTable MakeShoeSizeNull(String Name, String ID) {
             MySqlConnection dbcon = new MySqlConnection(connectionString);
             dbcon.Open();
