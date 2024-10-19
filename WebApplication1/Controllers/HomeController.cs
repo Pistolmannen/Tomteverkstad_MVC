@@ -28,46 +28,43 @@ namespace WebApplication1.Controllers
             ViewBag.AllTomtenissar = AllTomtenissarData;
 
             string formID = form["formID"];
-            if (formID == "login") {
-                @ViewBag.print = "login";
-            }
-            else if (formID == "searchTomtenissar") {
+            if (formID == "searchTomtenissar") {
                 @ViewBag.name = form["Name"];
                 DataTable TomtenissarData = tm.GetTomtenissarByName(@ViewBag.name);
                 ViewBag.Tomtenissar = TomtenissarData;
             }
             else if(formID == "create") {
                 @ViewBag.name = form["Name"];
-                @ViewBag.ID = form["CID"];
-                @ViewBag.nuts = form["Nuts"];
-                @ViewBag.raisin = form["Raisin"];
-                if (@ViewBag.name.Count == 0 || @ViewBag.ID.Count == 0 || @ViewBag.nuts.Count == 0 || @ViewBag.raisin.Count == 0)
+                String ID = form["CID"];
+                String nuts = form["Nuts"];
+                String raisin = form["Raisin"];
+                if (@ViewBag.name.Count == 0 || ID == null || nuts == null || raisin == null)
                 {
                     ViewBag.updateStatus = "create needs all values";
                 }
                 else
                 {
-                    int.TryParse(@ViewBag.nuts, out int nuts);
-                    int.TryParse(@ViewBag.raisin, out int raisin);
-                    tm.CreateTomtenisse(@ViewBag.name, @ViewBag.ID, nuts, raisin);
+                    int.TryParse(nuts, out int intNuts);
+                    int.TryParse(raisin, out int intRaisin);
+                    tm.CreateTomtenisse(@ViewBag.name, ID, intNuts, intRaisin);
                     ViewBag.createStatus = "create might be successful";
                 }
             }
             else if (formID == "update") {
                 @ViewBag.name = form["Name"];
-                @ViewBag.ID = form["ChefID"];
-                @ViewBag.ShoeSize = form["ShoeSize"];
-                if (@ViewBag.name.Count == 0 || @ViewBag.ID.Count == 0 || @ViewBag.ShoeSize.Count == 0) {
+                String ID = form["ChefID"];
+                String ShoeSize = form["ShoeSize"];
+                if (@ViewBag.name.Count == 0 || ID == null || ShoeSize == null) {
                     ViewBag.updateStatus = "update needs all values";
                 }
                 else {
-                    if (form["Shoesize"] == "none")
+                    if (ShoeSize == "none")
                     {
-                        tm.MakeShoeSizeNull(form["Name"], form["ChefID"]);
+                        tm.MakeShoeSizeNull(@ViewBag.name, ID);
                     }
                     else
                     {
-                        tm.UpdateShoeSize(form["Shoesize"], form["Name"], form["ChefID"]);
+                        tm.UpdateShoeSize(ShoeSize, @ViewBag.name, ID);
                     }
                     ViewBag.updateStatus = "update might be successful";
                 }  

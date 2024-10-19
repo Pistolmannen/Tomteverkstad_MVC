@@ -1,22 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Intro";
 }
 
-<br />
-<br />
-<br />
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Intro side</h1>
+</div>
 
 <form method="post" action="@Url.Action("Tomteverkstad", "Home")">
-    <label>
-        Username:
-        <input type="text" name="username" value="" placeholder="Username" />
-    </label>
-    <br />
-    <label>
-        Password:
-        <input type="password" name="password" value="" />
-    </label>
-    <br />
-    <input type="hidden" name="formID" value="login" />
-    <input type="submit" value="Login" />
+    <input type="submit" value="move" />
 </form>
