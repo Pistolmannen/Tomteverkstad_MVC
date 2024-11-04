@@ -28,12 +28,12 @@ namespace WebApplication1.Controllers
             ViewBag.AllTomtenissar = AllTomtenissarData;
 
             string formID = form["formID"];
-            if (formID == "searchTomtenissar") {
+            if (formID == "searchTomtenissar") {        // söka på tomtenissar
                 @ViewBag.name = form["Name"];
                 DataTable TomtenissarData = tm.GetTomtenissarByName(@ViewBag.name);
                 ViewBag.Tomtenissar = TomtenissarData;
             }
-            else if(formID == "create") {
+            else if(formID == "create") {               // skapa tomtenissar
                 @ViewBag.name = form["Name"];
                 String ID = form["CID"];
                 String nuts = form["Nuts"];
@@ -50,7 +50,7 @@ namespace WebApplication1.Controllers
                     ViewBag.createStatus = "create might be successful";
                 }
             }
-            else if (formID == "update") {
+            else if (formID == "update") {              // uppdatera tomtenissars sko storlek
                 @ViewBag.name = form["Name"];
                 String ID = form["ChefID"];
                 String ShoeSize = form["ShoeSize"];
@@ -70,7 +70,7 @@ namespace WebApplication1.Controllers
                 }  
 
             }
-            else if (formID == "searchLeksaker") {
+            else if (formID == "searchLeksaker") {          // söka på leksaker beroned av namn
                 @ViewBag.Prise = form["Prise"];
                 int.TryParse(@ViewBag.Prise, out int prise);
                 LeksakModel Lm = new LeksakModel(_configuration);
@@ -81,7 +81,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public IActionResult DeleteTomtenisse(String Name, String PNR) 
+        public IActionResult DeleteTomtenisse(String Name, String PNR)      // tabort tomtenissar
         { 
             TomtenisseModel tm = new TomtenisseModel(_configuration);   // test
             tm.DeleteTomtenisse(Name, PNR);                             // 000000-0000-1-000000000

@@ -37,17 +37,25 @@
 
 @if(ViewBag.Tomtenissar != null && ((System.Data.DataTable)ViewBag.Tomtenissar).Rows.Count > 0){
 
-    @foreach (var Tomtenisse in ViewBag.Tomtenissar.Rows)
-    {   
-        <pre>
+    <table>
+        <tr>
             @for (var i = 0; i < ViewBag.Tomtenissar.Columns.Count; i++)
             {
-                <div>@ViewBag.Tomtenissar.Columns[i] : @Tomtenisse[i]</div>
+                <th>@ViewBag.Tomtenissar.Columns[i]</th>
             }
-            @Html.ActionLink("Delete", "DeleteTomtenisse", "Home", new{Name = @Tomtenisse[0], PNR = @Tomtenisse[1]}, null)
-        </pre>
-       
-    }
+            <th>Delete</th>
+        </tr>
+        @foreach (var Tomtenisse in ViewBag.Tomtenissar.Rows)
+        {   
+            <tr>
+                @for (var i = 0; i < ViewBag.Tomtenissar.Columns.Count; i++)
+                {
+                    <td>@Tomtenisse[i]</td>
+                }
+                <td> @Html.ActionLink("Delete", "DeleteTomtenisse", "Home", new { Name = @Tomtenisse[0], PNR = @Tomtenisse[1] }, null) </td>
+            </tr>
+        }
+    </table>
 }
 else{
     <p>no data found</p>
@@ -123,16 +131,23 @@ else{
 
 @if (ViewBag.leksaker != null && ((System.Data.DataTable)ViewBag.leksaker).Rows.Count > 0) {
 
-    @foreach (var Leksak in ViewBag.leksaker.Rows)
-    {
-        <pre>
+    <table>
+        <tr>
             @for (var i = 0; i < ViewBag.leksaker.Columns.Count; i++)
             {
-                <div>@ViewBag.leksaker.Columns[i] : @Leksak[i]</div>
+                <th>@ViewBag.leksaker.Columns[i]</th>
             }
-        </pre>
-
-    }
+        </tr>
+        @foreach (var Leksak in ViewBag.leksaker.Rows)
+        {   
+            <tr>
+                @for (var i = 0; i < ViewBag.leksaker.Columns.Count; i++)
+                {
+                    <td>@Leksak[i]</td>
+                }
+            </tr> 
+        }
+    </table>
 }
 else {
     <p>no data found</p>

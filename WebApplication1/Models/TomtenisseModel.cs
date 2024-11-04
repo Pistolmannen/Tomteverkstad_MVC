@@ -17,7 +17,7 @@ namespace WebApplication1.Models
             connectionString = _configuration["ConnectionString"];
         }
 
-        public DataTable GetTomtenissarByName(String Name) {
+        public DataTable GetTomtenissarByName(String Name) {                        // hämtar tomtenissar beroende på namn
             MySqlConnection dbcon = new MySqlConnection(connectionString);
             dbcon.Open();
             MySqlDataAdapter adapter = new MySqlDataAdapter("select * from Tomtenisse where Namn = @inputName", dbcon);
@@ -31,7 +31,7 @@ namespace WebApplication1.Models
             return tomtenisseTable;
         }
 
-        public DataTable GetTomtenissar() {
+        public DataTable GetTomtenissar() {                                         // hämtar alla tomtenissar
             MySqlConnection dbcon = new MySqlConnection(connectionString);
             dbcon.Open();
             MySqlDataAdapter adapter = new MySqlDataAdapter("CALL getNissar", dbcon);
@@ -44,7 +44,7 @@ namespace WebApplication1.Models
             return tomtenisseTable;
         }
 
-        public DataTable CreateTomtenisse(String Name, String ID, int Nuts, int Raisin) {
+        public DataTable CreateTomtenisse(String Name, String ID, int Nuts, int Raisin) {   // skapa tomtenissar
             MySqlConnection dbcon = new MySqlConnection(connectionString);
             dbcon.Open();
             MySqlDataAdapter adapter = new MySqlDataAdapter("insert into Tomtenisse(Namn, IdNr, Nötter, Russin) values(@inputName , @inputID , @inputNuts , @inputRaisin)", dbcon);
@@ -61,8 +61,7 @@ namespace WebApplication1.Models
             return createTable;
         }
 
-        public DataTable DeleteTomtenisse(String Name, String ID)
-        {
+        public DataTable DeleteTomtenisse(String Name, String ID) {                 // tabort tomtenissar
             MySqlConnection dbcon = new MySqlConnection(connectionString);
             dbcon.Open();
             MySqlDataAdapter adapter = new MySqlDataAdapter("delete from Tomtenisse where namn = @inputName and IdNr = @inputID", dbcon);
@@ -77,7 +76,7 @@ namespace WebApplication1.Models
             return deleteTable;
         }
 
-        public DataTable UpdateShoeSize(String ShoeSize, String Name, String ID) {
+        public DataTable UpdateShoeSize(String ShoeSize, String Name, String ID) {  // uppdatera tomtenissars skostorlek
             MySqlConnection dbcon = new MySqlConnection(connectionString);
             dbcon.Open();
             MySqlDataAdapter adapter = new MySqlDataAdapter("update Tomtenisse set Skostorlek = @inputShoeSize where Namn = @inputName and IdNr = @inputID", dbcon);
@@ -93,7 +92,7 @@ namespace WebApplication1.Models
             return updateTable;
         }
 
-        public DataTable MakeShoeSizeNull(String Name, String ID) {
+        public DataTable MakeShoeSizeNull(String Name, String ID) {                 // uppdatera tomtenissars skostorlek med null
             MySqlConnection dbcon = new MySqlConnection(connectionString);
             dbcon.Open();
             MySqlDataAdapter adapter = new MySqlDataAdapter("update Tomtenisse set Skostorlek = NULL where Namn = @inputName and IdNr = @inputID", dbcon);
